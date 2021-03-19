@@ -1,0 +1,43 @@
+@import "../scss/colors";
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  background-color: $background-simple-steps;
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 950px;
+
+    .signature {
+      position: relative;
+      top: 40px;
+      left: 200px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &_title {
+    margin-bottom: 26px;
+    font-size: 2.375rem;
+    margin-top: 70px;
+  }
+
+  &_description {
+    margin-top: 55px;
+    font-size: 1.875rem;
+    padding: 0 150px;
+    text-align: center;
+  }
+
+  &_image {
+    background-image: url("../assets/People.jpg");
+    width: 900px;
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

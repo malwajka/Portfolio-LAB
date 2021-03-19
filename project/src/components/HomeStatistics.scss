@@ -1,0 +1,29 @@
+@import "src/scss/colors";
+
+.statistics {
+  background-color: $yellow-frame;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 46px 0 86px 0;
+
+  &_single {
+    max-width: 334px;
+  }
+
+  &_value {
+    margin-bottom: 10px;
+    font-size: 5.625rem;
+    color: $statistics-value;
+  }
+
+  &_title {
+    color: $nav-color;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+
+  &_description {
+    color: $nav-color;
+  }
+}

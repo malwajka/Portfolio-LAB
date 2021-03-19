@@ -5,9 +5,10 @@
 @import '~reset-css/sass/reset';
 
 * {
-  width: 100%;
+  box-sizing: border-box;
 }
 
 body {
   font-family: $font-base;
+  width: 100%;
 }

@@ -1,0 +1,65 @@
+@import "../scss/colors";
+
+.simple_steps {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  &-header {
+    text-align: center;
+
+    &-title {
+      font-size: 2.375rem;
+      color: $nav-color;
+      margin-bottom: 25px;
+    }
+  }
+
+  &-main {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: $background-simple-steps;
+    margin-top: 35px;
+    padding: 73px 100px 80px 100px;
+
+    &-single {
+      max-width: 165px;
+      text-align: center;
+
+      &-title {
+        margin-top: 8px;
+        margin-bottom: 10px;
+        color: $nav-color;
+        font-size: 1.125rem;
+
+        &::after {
+          content: '';
+          height: 1px;
+          width: 60px;
+          background-color: $nav-color;
+          display: block;
+          position: relative;
+          left: 53px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  &-action {
+    display: flex;
+    justify-content: center;
+
+    &-link {
+      margin-top: 35px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $nav-color;
+      padding: 13px 93px;
+      border: 0.75px solid $nav-color;
+      font-size: 2.25rem;
+    }
+  }
+}
