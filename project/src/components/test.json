@@ -1,0 +1,62 @@
+{
+  "fundations": {
+    "title": "Jakis",
+    "items": [
+      {
+        "title": "tytul",
+        "subtitle": "subtitle",
+        "other": "others"
+      },
+      {
+        "title": "tytul",
+        "subtitle": "subtitle",
+        "other": "others"
+      },
+      {
+        "title": "tytul",
+        "subtitle": "subtitle",
+        "other": "others"
+      }
+    ]
+  },
+  "organisations": {
+    "title": "Jakis",
+    "items": [
+      {
+        "title": "tytul",
+        "subtitle": "subtitle",
+        "other": "others"
+      },
+      {
+        "title": "tytul",
+        "subtitle": "subtitle",
+        "other": "others"
+      },
+      {
+        "title": "tytul",
+        "subtitle": "subtitle",
+        "other": "others"
+      }
+    ]
+  },
+  "locals": {
+    "title": "Jakis",
+    "items": [
+      {
+        "title": "tytul",
+        "subtitle": "subtitle",
+        "other": "others"
+      },
+      {
+        "title": "tytul",
+        "subtitle": "subtitle",
+        "other": "others"
+      },
+      {
+        "title": "tytul",
+        "subtitle": "subtitle",
+        "other": "others"
+      }
+    ]
+  }
+}

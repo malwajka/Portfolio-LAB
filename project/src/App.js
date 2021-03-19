@@ -1,23 +1,35 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import {Home} from "./components/Home";
 import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import {Login} from "./components/Login";
 import {Register} from "./components/Register";
 import {Logout} from "./components/Logout";
-import Firebase from './components/Firebase'
+import { FirebaseContext } from "./index";
 
-export const FirebaseContext = createContext(null)
-
+export const AuthContext = createContext(null)
 function App() {
+    const firebase = useContext(FirebaseContext);
+    const [user, setUser] = useState("");
+
+    useEffect(() => {
+        firebase.auth.onAuthStateChanged((user) => {
+            if (user) {
+                setUser(user);
+            } else {
+                setUser("")
+            }
+        })
+    }, [])
+
     return (
-        <FirebaseContext.Provider value={new Firebase()}>
+<AuthContext.Provider value={user}>
         <Router>
             <Switch>
                 <Route exact path={"/"}>
                     <Home/>
                 </Route>
                 <Route exact path={"/logowanie"}>
-                    <Login/>
+                    <Login user={user}/>
                 </Route>
                 <Route exact path={"/rejestracja"}>
                     <Register/>
@@ -27,7 +39,7 @@ function App() {
                 </Route>
             </Switch>
         </Router>
-        </FirebaseContext.Provider>
+</AuthContext.Provider>
     );
 }
 

@@ -1,18 +1,38 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
 import Decoration from '../assets/Decoration.svg';
 import './HomeNavHeader.scss';
 import {Link as ScrollLink} from 'react-scroll';
+import {AuthContext} from "../App";
+import {FirebaseContext} from "../index";
 
 export const HomeNavHeader = () => {
+    const firebase = useContext(FirebaseContext);
+    const user = useContext(AuthContext);
+
+    const handleLogOut = (e) => {
+        e.preventDefault();
+        firebase.doSignOut();
+    }
+
     return (
         <header className='header'>
             <div/>
             <div className='header_content'>
                 <div className='header_nav'>
                     <div className='log_actions'>
-                        <Link className='log_link' to={"/logowanie"}>Zaloguj</Link>
-                        <Link className='log_link frame' to={"/rejestracja"}>Załóż konto</Link>
+                        {user ? (
+                            <>
+                                <h3>{user.email}</h3>
+                                <Link onClick={handleLogOut} className='cos' to={"/wylogowano"}>Wyloguj</Link>
+                            </>
+                        ) : (
+                            <>
+                                <Link className='log_link' to={"/logowanie"}>Zaloguj</Link>
+                                <Link className='log_link frame' to={"/rejestracja"}>Załóż konto</Link>
+                            </>
+                        )}
+
                     </div>
                     <ul className='nav_list'>
                         <li className='nav_item start'>
@@ -26,11 +46,11 @@ export const HomeNavHeader = () => {
                                         duration={500}>O co chodzi?</ScrollLink>
                         </li>
                         <li className='nav_item'>
-                           <ScrollLink to='about'
-                                       spy={true}
-                                       smooth={true}
-                                       offset={-70}
-                                       duration={500}>O nas</ScrollLink>
+                            <ScrollLink to='about'
+                                        spy={true}
+                                        smooth={true}
+                                        offset={-70}
+                                        duration={500}>O nas</ScrollLink>
                         </li>
                         <li className='nav_item'>
                             <ScrollLink to='who_we_help'

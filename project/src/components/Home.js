@@ -5,7 +5,7 @@ import {HomeSimpleSteps} from "./HomeSimpleSteps";
 import {HomeAbout} from "./HomeAbout";
 import {HomeWhoWeHelp} from "./HomeWhoWeHelp";
 import {HomeContact} from "./HomeContact";
-import { FirebaseContext } from "../App";
+import { FirebaseContext } from "../index";
 import {Logout} from "./Logout";
 
 export const Home = () => {

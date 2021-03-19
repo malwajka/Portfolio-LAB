@@ -2,7 +2,7 @@ import React, {useContext, useState, useEffect} from 'react';
 import './Register.scss';
 import {Link} from 'react-router-dom';
 import Decoration from "../assets/Decoration.svg";
-import {FirebaseContext} from "../App";
+import {FirebaseContext} from "../index";
 
 export const Register = () => {
     const firebase = useContext(FirebaseContext);
@@ -19,11 +19,12 @@ export const Register = () => {
         return re.test(email);
     }
 
-    useEffect(() => {
-        firebase.fundations().on("value", (snap) => {
-            console.log(snap.val())
-        })
-    }, [])
+    // useEffect(() => {
+    //     firebase.fundations().on("value", (snap) => {
+    //         console.log(snap.val())
+    //     })
+    // }, [])
+
     const handleRegisteredIn = e => {
         e.preventDefault();
         // firebase.doCreateUserWithEmailAndPassword('pawel@gabryel.eu', 'AlaMaKota123')
@@ -39,11 +40,11 @@ export const Register = () => {
             errors.push("Hasło musi mieć conajmniej 6 znaków!");
         }
 
-        if (password != repeatPassword) {
+        if (password !== repeatPassword) {
             errors.push("Hasła muszą być takie same!");
         }
 
-        if (errors.length != 0) {
+        if (errors.length !== 0) {
             setErrors(errors);
         } else {
             setRegisteredIn(true);

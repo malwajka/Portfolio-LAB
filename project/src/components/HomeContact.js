@@ -4,7 +4,6 @@ import './HomeContact.scss';
 import Decoration from "../assets/Decoration.svg";
 import Facebook from "../assets/Facebook.svg";
 import Instagram from "../assets/Instagram.svg";
-// import $ from "jquery";
 
 export const HomeContact = () => {
 
@@ -38,14 +37,29 @@ export const HomeContact = () => {
             errors.push("Wiadomość nie może być pusta i musi zawierać min. 120 znaków!")
         }
 
-        if (errors.length != 0) {
+        if (errors.length !== 0) {
             setErrors(errors);
         } else {
             setSended(true);
-            setErrors([]);
-            setName([]);
-            setEmail([]);
-            setMessage([]);
+            setErrors("");
+            setName("");
+            setEmail("");
+            setMessage("");
+
+            fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
+                method: "POST",
+                body: JSON.stringify(message),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(() => {
+                setName('');
+                setEmail('');
+                setMessage('');
+                setSended(`Wiadomość została wysłana.
+        Wkrótce się skontaktujemy`)
+            })
+                .catch(err => console.log(err))
         }
     }
 
@@ -84,9 +98,9 @@ export const HomeContact = () => {
                         <div className='form__validation'>
                             {sended && <h4 className='sent_confirm'>Wiadomość została wysłana!</h4>}
                             {errors.length > 0 && <h4 className='error_alert'>{errors.map(error =>
-                            <ul className='error_list'>
-                                <li className='error'>{error}</li>
-                            </ul> )}</h4>}
+                                <ul className='error_list'>
+                                    <li className='error'>{error}</li>
+                                </ul>)}</h4>}
                         </div>
                     </form>
                 </div>

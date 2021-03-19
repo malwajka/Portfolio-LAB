@@ -5,6 +5,7 @@ import 'firebase/database';
 const config = {
     apiKey: "AIzaSyAc7vs7-UKOR2EkBgxog0AQeinzOqvwg7c",
     authDomain: "malwajka-project.firebaseapp.com",
+    databaseURL: "https://malwajka-project-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "malwajka-project",
     storageBucket: "malwajka-project.appspot.com",
     messagingSenderId: "612252752903",
@@ -38,8 +39,8 @@ class Firebase {
     // *** User API ***
 
     user = uid => this.db.ref(`users/${uid}`);
+    fundations = (fundation) => this.db.ref(fundation);
 
-    fundations = () => this.db.ref('malwajka-project-default-rtdb');
 }
 
 export default Firebase;
