@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {HomeNavHeader} from "./HomeNavHeader";
-import './Home.scss';
+import {HomeStatistics} from "./HomeStatistics";
+import {HomeSimpleSteps} from "./HomeSimpleSteps";
+import {HomeAbout} from "./HomeAbout";
+import {HomeWhoWeHelp} from "./HomeWhoWeHelp";
+import {HomeContact} from "./HomeContact";
+import { FirebaseContext } from "../App";
+import {Logout} from "./Logout";
 
 export const Home = () => {
+    const firebase = useContext(FirebaseContext)
+
+    console.log(firebase)
     return (
-     <HomeNavHeader/>
+        <>
+            <HomeNavHeader/>
+            <HomeStatistics/>
+            <HomeSimpleSteps/>
+            <HomeAbout/>
+            <HomeWhoWeHelp/>
+            <HomeContact/>
+            {/*<Logout/>*/}
+        </>
     );
 }

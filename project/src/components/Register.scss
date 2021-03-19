@@ -1,0 +1,110 @@
+@import "../scss/colors";
+
+.login_nav {
+  display: flex;
+  flex-direction: column;
+  margin-right: 140px;
+  margin-top: 40px;
+  color: $nav-color;
+}
+
+.login_actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 26px;
+
+  .login_link {
+    margin-left: 20px;
+    text-decoration: none;
+  }
+
+  .frame {
+    border: 1px solid $yellow-frame;
+    padding: 9px 10px;
+    margin-top: -9px;
+  }
+}
+
+.login_list {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.125rem;
+
+  .login_item {
+    margin-left: 55px;
+  }
+
+  .login_start {
+      border: 1px solid $nav-color;
+      padding: 9px 20px;
+      position: relative;
+      top: -9px;
+  }
+
+  .login_start-link {
+    text-decoration: none;
+  }
+}
+
+.login_panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $nav-color;
+  margin-top: 50px;
+
+  .login_title {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+
+  .register_form {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: $background-simple-steps;
+    padding: 30px 70px;
+    height: 330px;
+
+    .login_label {
+      margin-bottom: 10px;
+      margin-top: 30px;
+    }
+
+    .login_input {
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid $nav-color;
+      width: 250px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.login_actions-form {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+
+  .login_confirm {
+    border: 1px solid $nav-color;
+    padding: 13px 15px;
+    background-color: transparent;
+  }
+
+  .login_link {
+    margin-top: 13px;
+    text-decoration: none;
+  }
+}
+
+.register_success {
+  margin-top: 20px;
+  color: green;
+  text-align: left;
+}
