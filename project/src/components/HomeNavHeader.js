@@ -22,10 +22,10 @@ export const HomeNavHeader = () => {
                 <div className='header_nav'>
                     <div className='log_actions'>
                         {user ? (
-                            <>
-                                <h3>{user.email}</h3>
-                                <Link onClick={handleLogOut} className='cos' to={"/wylogowano"}>Wyloguj</Link>
-                            </>
+                            <div className='user_email-container'>
+                                <h3 className='user_email'>{user.email}</h3>
+                                <Link onClick={handleLogOut} className='log-out' to={"/wylogowano"}>Wyloguj</Link>
+                            </div>
                         ) : (
                             <>
                                 <Link className='log_link' to={"/logowanie"}>Zaloguj</Link>

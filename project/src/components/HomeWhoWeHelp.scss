@@ -25,11 +25,58 @@
     margin-top: 50px;
     display: flex;
     font-size: 1.5rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-bottom: 70px;
+    width: 700px;
+    align-items: center;
+    border: 1px solid transparent;
 
     .organizations-single {
-
+      &:focus {
+        border: 1px solid $nav-color;
+        padding: 10px 20px;
+      }
     }
   }
+}
+
+.who_we_help-description {
+  font-size: 1.375rem;
+  width: 600px;
+  margin-bottom: 65px;
+}
+
+.who_we_help-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fundation_title {
+  font-size: 1.625rem;
+  margin-bottom: 5px;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.fundation_subtitle {
+  font-size: 1.125rem;
+  margin-bottom: 30px;
+}
+
+.fundation_other {
+  text-align: right;
+}
+
+.fundations_list {
+  //text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+}
+
+.line {
+  border-bottom: 1px solid $nav-color;
+  width: 1000px;
 }

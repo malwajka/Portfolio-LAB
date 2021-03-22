@@ -56,8 +56,8 @@ export const Login = ({user}) => {
                 <div className='login_actions'>
                     {user ? (
                         <>
-                            <h3>{user.email}</h3>
-                            <Link onClick={handleLogOut} className='cos' to={"/wylogowano"}>Wyloguj</Link>
+                            <h3 className='user_email'>{user.email}</h3>
+                            <Link onClick={handleLogOut} className='log-out' to={"/wylogowano"}>Wyloguj</Link>
                         </>
                     ) : (
                         <>
